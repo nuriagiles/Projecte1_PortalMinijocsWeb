@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adivina el número</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Portal de minijuegos web</h1>
+        <h2>Adivina el número</h2>
+        <p>Intenta adivinar el número entre 1 y 100.</p>
+
+        <div id="containerA" class="div1">
+            <p>Numero de intentos: </p>
+            <p>Mensaje de ayuda: </p>
+        </div>
+        <input type="number" id="guessInput" placeholder="Ingresa tu suposición">
+        <button id="guessButton">Adivinar</button>
+        <button id="restartButton" onclick="limpiarFormulario()">reiniciar juego</button>
+
+
+        <script src="index.js"></script>
+    </body>
+</html>
