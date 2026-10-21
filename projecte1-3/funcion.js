@@ -2,61 +2,43 @@
 //Renderiza la tarjeta
 function dibuixaUnivers(columnes, files){
     let variable = `<div class="univers">`
-    variable += `<div class="fila">`
-    for(let i = 0; i<3; i++){
-        variable += `<div class="celula" data-id="0-${i}">0-${i}</div>`
+    for(let i = 0; i<files; i++){
+        variable += `<div class="fila">`
+        for(let l = 0; l<columnes; l++){
+            variable += `<div class="celula" data-id="${i}-${l}">${i}-${l}</div>`
+        }
+        /*TAREA 2*/                                                                                                                            
+            variable += `</div>`
     }
-    /*TAREA 2*/                                                                                                                            
-    variable += `</div>`
-    variable += `<div class="fila">`
-    for(let i = 0; i<3; i++){
-        variable += `<div class="celula" data-id="1-${i}">1-${i}</div>`
-    }
-        variable += ` </div>`
         variable += ` </div>`
 
     document.querySelector("body").innerHTML = variable
-       
+    crearMatriu(columnes, files)
 }
 
-dibuixaUnivers()
+dibuixaUnivers(5, 5)
 
 /*TASCA 2*/
 //Aleatorio
-
 function aleatori(){
     let numero = Math.random()
 
-    if(numero<0.50){
-        console.log(true)
-        
-        return true
-        
-    }else{
-
-        console.log(false)
-        return false
-    }
+    return numero < 0.50;
 
 }
 
 
-let cont = 0
-let resultado = 0
 
+console.log("hola")
 /*TASCA 3*/ 
 function aleatoriPercentatge(percentatge){                
-    aleatori()
-    resultado = aleatori()
-    if(resultado == 1){
-        cont++
-    }
+    let NumeroAleatorio = Math.floor(Math.random() * 100);
 
-    if(cont<3000){
-        console.log(cont)
+    if (NumeroAleatorio < percentatge) {
+       return true;
+    } else {
+       return false;     
     }
-    
-    
 
 }
 for(let i=0; i < 10000; i++){
@@ -65,5 +47,55 @@ for(let i=0; i < 10000; i++){
 }
 
 
+/*TASCA 4*/
+function crearMatriu(columnes, files){
+    let Matriz =[]
+    let CelulaViva = " "
+    for(let i=0; i<files; i++){
+        let fila = []
+        for(let l=0; l<columnes; l++){
+            CelulaViva = aleatori()
 
+            fila.push(CelulaViva)
+        }
+        Matriz.push(fila)
+    }
+    console.log(Matriz)
+
+    dibuixaUniversAmbEstat(Matriz)
+
+    return Matriz
+}
+/*Tasca 5*/
+function dibuixaUniversAmbEstat(Matriz){
+    let dataVivos = []
+    for(let i = 0; i<Matriz.length; i++){
+        let filas = document.querySelectorAll(".fila")
+
+        for(let j = 0; j< Matriz[i].length; j++){
+            let celulasDeLaFila = filas[i].querySelectorAll(".celula");
+            let celula = celulasDeLaFila[j];            
+            let dataId = celula.getAttribute('data-id'); 
+            
+
+            if(Matriz[i][j] == true){
+                celula.classList.add('viva')
+                dataVivos.push(dataId.split("-"))                
+            }else{
+                celula.classList.add('morta')
+            }
+            
+        }
+    }
+    comptarVeinsVius(Matriz, dataVivos)
+}
+
+/*Tasca 6*/
+function comptarVeinsVius(Matriz, posicion){
+    let cont = 0
+    
+    console.log(posicion)
+}
+
+/*Tasca 7*/ 
 
