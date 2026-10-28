@@ -1,3 +1,6 @@
+import enemigosjs from "./enemy.js"
+import jugador from "./player.js"
+
 let matriz = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
@@ -17,7 +20,13 @@ let matriz = [
 ]
 
 
+console.log(enemigosjs)
+console.log(jugador)
 
+for(let i = 0; i<enemigosjs.length; i++){
+    console.log(matriz[enemigosjs[i].fila][enemigosjs[i].columna])
+    matriz[enemigosjs[i].columna][enemigosjs[i].fila] = 1
+}
 
-
+console.log(matriz)
 
