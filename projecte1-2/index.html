@@ -4,6 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padman bàsic</title>
+    <style>
+        .panel-datos{
+            display: flex;
+            gap: 15px; 
+        }
+        .tablon-juego{
+            background-color: #262E40;
+            display: grid;
+            grid-template-columns: repeat(15, 1fr);
+            gap: 20px;
+            width: min-content;
+            padding: 20px;
+        }
+        .casilla{
+            width: 50px;
+            height: 50px;
+            border: 1px solid white;
+        }
+        .jugador-casilla{
+            background-color: yellow;
+            align-content: center;
+            text-align: center;
+            font-size: 30px;
+
+        }
+        .enemigo-casilla{
+            background-color: red;
+            align-content: center;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
     <h1>Portal de minijuegos web</h1>
@@ -11,28 +43,29 @@
     <div class="panel-datos">
         <div>
             <p>NIVEL</p>
-            <span></span>
+            <span id="nivel-span"></span>
         </div>
         
         <div>
             <p>TIEMPO</p>
-            <span></span>
+            <span id="tiempo-span"></span>
         </div>
         
         <div>
             <p>PUNTOS ENEMIGOS</p>
-            <span></span>
+            <span id="puntosEnemigos-span"></span>
         </div>
         
         <div>
             <p>PUNTOS TIEMPO</p>
-            <span></span>
+            <span class="puntosTiempo-span"></span>
         </div>
         
     </div>
+    <h2 class="puntos"></h2>
     <div class="tablon-juego">
 
     </div>
-    <script src="scripts/renderer.js" type="module"></script>
+    <script src="scripts/game.js" type="module"></script>
 </body>
 </html>

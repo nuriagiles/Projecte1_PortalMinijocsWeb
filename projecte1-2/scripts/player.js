@@ -1,7 +1,8 @@
 const padman = {
-    fila: 8,
-    columna: 8,
+    fila: 7,
+    columna: 7,
     score: 0,
+    emoji: "👾"
 }
 
 export default padman
