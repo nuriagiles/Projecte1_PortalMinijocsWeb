@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .Limite-izquierdo, .Limite-derecho{
+            height: 650px;
+            width: 12px;
+            background-color: white;
+        }
+        .Limite-superior{
+            height: 12px;
+            width: -webkit-fill-available;
+            background-color: white;
+        }
+        .entorno-container{
+            display: flex;
+        }
+        .entorno{
+            position: relative;
+        }
+        .bola{
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            position: absolute;
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="entorno">
+        <div class="entorno-container">
+            <div class="Limite-izquierdo"></div>
+            <div class="Limite-superior"></div>
+            <div class="Limite-derecho"></div>
+        </div>
+            <div class="bola"></div>
+    </div>
+    
+
+    <script src="script/game.js"></script>
+</body>
+</html>
